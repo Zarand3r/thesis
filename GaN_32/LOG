@@ -1,0 +1,18 @@
+--------------------------------------------------------------------------
+[[14501,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: node-3-12
+
+Another transport will be used instead, although this may result in
+lower performance.
+--------------------------------------------------------------------------
+ running on    8 total cores
+ distrk:  each k-point on    8 cores,    1 groups
+ distr:  one band on    4 cores,    2 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jun 24 2018 22:36:06) complex          
+  
+ERROR: the following files does not exist POSCAR
+Job exited.
