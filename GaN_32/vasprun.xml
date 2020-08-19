@@ -6,5 +6,40 @@
   <i name="subversion" type="string">(build Jun 24 2018 22:36:06) complex            parallel </i>
   <i name="platform" type="string">LinuxIFC </i>
   <i name="date" type="string">2020 08 18 </i>
-  <i name="time" type="string">23:24:07 </i>
+  <i name="time" type="string">23:32:36 </i>
  </generator>
+ <incar>
+  <i type="string" name="SYSTEM"> /net/hulk/PMD/skwon/GaN/Wurtzite/vasp/U</i>
+  <i type="int" name="ISTART">     1</i>
+  <i type="string" name="PREC">accurate</i>
+  <i type="string" name="ALGO"> Fast</i>
+  <i type="int" name="NSIM">     4</i>
+  <i type="int" name="ISPIN">     1</i>
+  <i type="int" name="ICHARG">     2</i>
+  <i type="int" name="NELM">   200</i>
+  <i type="int" name="IBRION">     2</i>
+  <i name="EDIFF">      0.00000010</i>
+  <i name="EDIFFG">      0.00100000</i>
+  <i type="int" name="NSW">    10</i>
+  <i type="int" name="ISIF">     3</i>
+  <i name="ENCUT">    500.00000000</i>
+  <i type="logical" name="LREAL"> F  </i>
+  <i type="logical" name="LPLANE"> T  </i>
+  <i type="int" name="ISMEAR">     0</i>
+  <i name="SIGMA">      0.03000000</i>
+  <i type="int" name="LMAXMIX">     4</i>
+  <i type="logical" name="LWAVE"> F  </i>
+  <i type="logical" name="LCHARG"> F  </i>
+  <i type="logical" name="LVTOT"> F  </i>
+  <i type="int" name="LORBIT">    11</i>
+  <i type="logical" name="LSCALU"> F  </i>
+  <v type="int" name="KPOINT_BSE">    -1     0     0     0</v>
+  <i type="int" name="NELM">   200</i>
+  <i type="string" name="GGA"> PE</i>
+  <i type="logical" name="LDAU"> T  </i>
+  <v type="int" name="LDAUTYPE">     2</v>
+  <v type="int" name="LDAUL">     2    -1</v>
+  <v name="LDAUU">      6.70000000      0.00000000</v>
+  <v name="LDAUJ">      0.00000000      0.00000000</v>
+  <i type="int" name="LDAUPRINT">     2</i>
+ </incar>

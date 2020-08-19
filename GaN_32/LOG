@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------
-[[14501,1],0]: A high-performance Open MPI point-to-point messaging module
+[[15982,1],0]: A high-performance Open MPI point-to-point messaging module
 was unable to find any relevant network interfaces:
 
 Module: OpenFabrics (openib)
@@ -14,5 +14,44 @@ lower performance.
  using from now: INCAR     
  vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jun 24 2018 22:36:06) complex          
   
-ERROR: the following files does not exist POSCAR
+ POSCAR found type information on POSCAR  Ga N 
+ POSCAR found :  2 types and      32 ions
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|  ADVICE TO THIS USER RUNNING 'VASP/VAMP'   (HEAR YOUR MASTER'S VOICE ...):  |
+|                                                                             |
+|      You have a (more or less) 'large supercell' and for larger cells       |
+|      it might be more efficient to use real space projection opertators     |
+|      So try LREAL= Auto  in the INCAR   file.                               |
+|      Mind:          For very  accurate calculation you might also keep the  |
+|      reciprocal projection scheme          (i.e. LREAL=.FALSE.)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+
+ POSMAP internal error: symmetry equivalent atom not found,
+   you might try decreasing or increasing SYMPREC by an order of magnitude.
+
+ POSMAP internal error: symmetry equivalent atom not found,
+   you might try decreasing or increasing SYMPREC by an order of magnitude.
+
+ POSMAP internal error: symmetry equivalent atom not found,
+   you might try decreasing or increasing SYMPREC by an order of magnitude.
+
+ POSMAP internal error: symmetry equivalent atom not found,
+   you might try decreasing or increasing SYMPREC by an order of magnitude.
+
+ POSMAP internal error: symmetry equivalent atom not found,
+   you might try decreasing or increasing SYMPREC by an order of magnitude.
+
+ POSMAP internal error: symmetry equivalent atom not found,
+   you might try decreasing or increasing SYMPREC by an order of magnitude.
+
+ POSMAP internal error: symmetry equivalent atom not found,
+   you might try decreasing or increasing SYMPREC by an order of magnitude.
+
+ POSMAP internal error: symmetry equivalent atom not found,
+   you might try decreasing or increasing SYMPREC by an order of magnitude.
 Job exited.

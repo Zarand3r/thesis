@@ -1,6 +1,269 @@
  vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jun 24 2018 22:36:06) complex          
   
- executed on             LinuxIFC date 2020.08.18  23:24:07
+ executed on             LinuxIFC date 2020.08.18  23:32:36
  running on    8 total cores
  distrk:  each k-point on    8 cores,    1 groups
  distr:  one band on NCORES_PER_BAND=   4 cores,    2 groups
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+ INCAR:
+ POTCAR:    PAW_PBE Ga_d 06Jul2010                
+ POTCAR:    PAW_PBE N 08Apr2002                   
+ POTCAR:    PAW_PBE Ga_d 06Jul2010                
+   VRHFIN =Ga: s2p1                                                             
+   LEXCH  = PE                                                                  
+   EATOM  =  2148.8298 eV,  157.9345 Ry                                         
+                                                                                
+   TITEL  = PAW_PBE Ga_d 06Jul2010                                              
+   LULTRA =        F    use ultrasoft PP ?                                      
+   IUNSCR =        1    unscreen: 0-lin 1-nonlin 2-no                           
+   RPACOR =    1.700    partial core radius                                     
+   POMASS =   69.723; ZVAL   =   13.000    mass and valenz                      
+   RCORE  =    2.300    outmost cutoff radius                                   
+   RWIGS  =    2.300; RWIGS  =    1.217    wigner-seitz radius (au A)           
+   ENMAX  =  282.691; ENMIN  =  212.018 eV                                      
+   ICORE  =        3    local potential                                         
+   LCOR   =        T    correct aug charges                                     
+   LPAW   =        T    paw PP                                                  
+   EAUG   =  490.690                                                            
+   DEXC   =    0.000                                                            
+   RMAX   =    2.341    core radius for proj-oper                               
+   RAUG   =    1.300    factor for augmentation sphere                          
+   RDEP   =    2.413    radius for radial grids                                 
+   RDEPT  =    1.856    core radius for aug-charge                              
+                                                                                
+   Atomic configuration                                                         
+    9 entries                                                                   
+     n  l   j            E        occ.                                          
+     1  0  0.50    -10228.7831   2.0000                                         
+     2  0  0.50     -1262.1604   2.0000                                         
+     2  1  1.50     -1098.6333   6.0000                                         
+     3  0  0.50      -148.1110   2.0000                                         
+     3  1  1.50       -98.8436   6.0000                                         
+     3  2  2.50       -19.1549  10.0000                                         
+     4  0  0.50        -8.9483   2.0000                                         
+     4  1  0.50        -2.5791   1.0000                                         
+     4  3  2.50        -2.7416   0.0000                                         
+   Description                                                                  
+     l       E           TYP  RCUT    TYP  RCUT                                 
+     2    -19.1549037     23  2.300                                             
+     2     -5.4423304     23  2.300                                             
+     0     -8.9483111     23  2.300                                             
+     0     68.0291300     23  2.300                                             
+     1     -2.5790802     23  2.100                                             
+     1     81.6349560     23  2.300                                             
+     3      6.8029130     23  2.300                                             
+  local pseudopotential read in
+  partial core-charges read in
+  partial kinetic energy density read in
+  atomic valenz-charges read in
+  non local Contribution for L=           2  read in
+    real space projection operators read in
+  non local Contribution for L=           2  read in
+    real space projection operators read in
+  non local Contribution for L=           0  read in
+    real space projection operators read in
+  non local Contribution for L=           0  read in
+    real space projection operators read in
+  non local Contribution for L=           1  read in
+    real space projection operators read in
+  non local Contribution for L=           1  read in
+    real space projection operators read in
+    PAW grid and wavefunctions read in
+ 
+   number of l-projection  operators is LMAX  =           6
+   number of lm-projection operators is LMMAX =          18
+ 
+ POTCAR:    PAW_PBE N 08Apr2002                   
+   VRHFIN =N: s2p3                                                              
+   LEXCH  = PE                                                                  
+   EATOM  =   264.5486 eV,   19.4438 Ry                                         
+                                                                                
+   TITEL  = PAW_PBE N 08Apr2002                                                 
+   LULTRA =        F    use ultrasoft PP ?                                      
+   IUNSCR =        1    unscreen: 0-lin 1-nonlin 2-no                           
+   RPACOR =    1.200    partial core radius                                     
+   POMASS =   14.001; ZVAL   =    5.000    mass and valenz                      
+   RCORE  =    1.500    outmost cutoff radius                                   
+   RWIGS  =    1.400; RWIGS  =    0.741    wigner-seitz radius (au A)           
+   ENMAX  =  400.000; ENMIN  =  300.000 eV                                      
+   ICORE  =        2    local potential                                         
+   LCOR   =        T    correct aug charges                                     
+   LPAW   =        T    paw PP                                                  
+   EAUG   =  627.112                                                            
+   DEXC   =    0.000                                                            
+   RMAX   =    1.529    core radius for proj-oper                               
+   RAUG   =    1.300    factor for augmentation sphere                          
+   RDEP   =    1.514    radius for radial grids                                 
+   RDEPT  =    1.338    core radius for aug-charge                              
+                                                                                
+   Atomic configuration                                                         
+    4 entries                                                                   
+     n  l   j            E        occ.                                          
+     1  0  0.50      -384.7179   2.0000                                         
+     2  0  0.50       -18.5828   2.0000                                         
+     2  1  0.50        -7.0898   3.0000                                         
+     3  2  1.50        -6.8029   0.0000                                         
+   Description                                                                  
+     l       E           TYP  RCUT    TYP  RCUT                                 
+     0    -18.5828119     23  1.200                                             
+     0    -13.5018863     23  1.200                                             
+     1     -7.0897853     23  1.500                                             
+     1      9.5240782     23  1.500                                             
+     2     -6.8029130      7  1.500                                             
+  local pseudopotential read in
+  partial core-charges read in
+  partial kinetic energy density read in
+  atomic valenz-charges read in
+  non local Contribution for L=           0  read in
+    real space projection operators read in
+  non local Contribution for L=           0  read in
+    real space projection operators read in
+  non local Contribution for L=           1  read in
+    real space projection operators read in
+  non local Contribution for L=           1  read in
+    real space projection operators read in
+    PAW grid and wavefunctions read in
+ 
+   number of l-projection  operators is LMAX  =           4
+   number of lm-projection operators is LMMAX =           8
+ 
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|  ADVICE TO THIS USER RUNNING 'VASP/VAMP'   (HEAR YOUR MASTER'S VOICE ...):  |
+|                                                                             |
+|      You have a (more or less) 'large supercell' and for larger cells       |
+|      it might be more efficient to use real space projection opertators     |
+|      So try LREAL= Auto  in the INCAR   file.                               |
+|      Mind:          For very  accurate calculation you might also keep the  |
+|      reciprocal projection scheme          (i.e. LREAL=.FALSE.)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+  PAW_PBE Ga_d 06Jul2010                :
+ energy of atom  1       EATOM=-2148.8298
+ kinetic energy error for atom=    0.0026 (will be added to EATOM!!)
+  PAW_PBE N 08Apr2002                   :
+ energy of atom  2       EATOM= -264.5486
+ kinetic energy error for atom=    0.0138 (will be added to EATOM!!)
+ 
+ 
+ POSCAR: /net/hulk/PMD/skwon/GaN/Wurtzite/vasp/U_
+  positions in direct lattice
+  No initial velocities read in
+ exchange correlation table for  LEXCH =        8
+   RHO(1)=    0.500       N(1)  =     2000
+   RHO(2)=  100.500       N(2)  =     4000
+ 
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+ ion  position               nearest neighbor table
+   1  0.333  0.167  0.249-  27 1.88  29 1.88  25 1.88  17 1.88
+   2  0.333  0.167  0.749-  28 1.88  30 1.88  26 1.88  18 1.88
+   3  0.333  0.667  0.249-  25 1.88  31 1.88  27 1.88  19 1.88
+   4  0.333  0.667  0.749-  26 1.88  32 1.88  28 1.88  20 1.88
+   5  0.833  0.167  0.249-  31 1.88  25 1.88  29 1.88  21 1.88
+   6  0.833  0.167  0.749-  32 1.88  26 1.88  30 1.88  22 1.88
+   7  0.833  0.667  0.249-  27 1.88  29 1.88  31 1.88  23 1.88
+   8  0.833  0.667  0.749-  28 1.88  30 1.88  32 1.88  24 1.88
+   9  0.167  0.333  0.499-  21 1.88  19 1.88  17 1.88  26 1.88
+  10  0.167  0.333  0.999-  22 1.88  20 1.88  18 1.88  25 1.88
+  11  0.167  0.833  0.499-  17 1.88  23 1.88  19 1.88  28 1.88
+  12  0.167  0.833  0.999-  18 1.88  24 1.88  20 1.88  27 1.88
+  13  0.667  0.333  0.499-  23 1.88  17 1.88  21 1.88  30 1.88
+  14  0.667  0.333  0.999-  24 1.88  18 1.88  22 1.88  29 1.88
+  15  0.667  0.833  0.499-  21 1.88  19 1.88  23 1.88  32 1.88
+  16  0.667  0.833  0.999-  22 1.88  20 1.88  24 1.88  31 1.88
+  17  0.333  0.167  0.438-  11 1.88  13 1.88   9 1.88   1 1.88
+  18  0.333  0.167  0.938-  12 1.88  14 1.88  10 1.88   2 1.88
+  19  0.333  0.667  0.438-   9 1.88  15 1.88  11 1.88   3 1.88
+  20  0.333  0.667  0.938-  10 1.88  16 1.88  12 1.88   4 1.88
+  21  0.833  0.167  0.438-  15 1.88   9 1.88  13 1.88   5 1.88
+  22  0.833  0.167  0.938-  16 1.88  10 1.88  14 1.88   6 1.88
+  23  0.833  0.667  0.438-  11 1.88  13 1.88  15 1.88   7 1.88
+  24  0.833  0.667  0.938-  12 1.88  14 1.88  16 1.88   8 1.88
+  25  0.167  0.333  0.188-   5 1.88   3 1.88   1 1.88  10 1.88
+  26  0.167  0.333  0.688-   6 1.88   4 1.88   2 1.88   9 1.88
+  27  0.167  0.833  0.188-   1 1.88   7 1.88   3 1.88  12 1.88
+  28  0.167  0.833  0.688-   2 1.88   8 1.88   4 1.88  11 1.88
+  29  0.667  0.333  0.188-   7 1.88   1 1.88   5 1.88  14 1.88
+  30  0.667  0.333  0.688-   8 1.88   2 1.88   6 1.88  13 1.88
+  31  0.667  0.833  0.188-   5 1.88   3 1.88   7 1.88  16 1.88
+  32  0.667  0.833  0.688-   6 1.88   4 1.88   8 1.88  15 1.88
+ 
+  LATTYP: Found a hexagonal cell.
+ ALAT       =     6.1397337914
+ C/A-ratio  =     1.6269020822
+  
+  Lattice vectors:
+  
+ A1 = (   6.1397337914,   0.0000000000,   0.0000000000)
+ A2 = (  -3.0698668957,   5.3171654358,   0.0000000000)
+ A3 = (   0.0000000000,   0.0000000000,   9.9887456894)
+
+
+Analysis of symmetry for initial positions (statically):
+=====================================================================
+ Subroutine PRICEL returns following result:
+ 
+  LATTYP: Found a hexagonal cell.
+ ALAT       =     3.0698667575
+ C/A-ratio  =     1.6269021554
+  
+  Lattice vectors:
+  
+ A1 = (   3.0698668036,   0.0000000000,   0.0000000000)
+ A2 = (  -1.5349333558,   2.6585825584,   0.0000000000)
+ A3 = (   0.0000000000,   0.0000000000,   4.9943728447)
+ 
+   8 primitive cells build up your supercell.
+ 
+
+ Routine SETGRP: Setting up the symmetry group for a 
+ hexagonal supercell.
+
+
+ Subroutine GETGRP returns: Found  8 space group operations
+ (whereof  2 operations were pure point group operations)
+ out of a pool of 24 trial point group operations.
+
+
+The static configuration has the point symmetry C_1h.
+ The point group associated with its full space group is C_4v.
+
+
+Analysis of symmetry for dynamics (positions and initial velocities):
+=====================================================================
+ Subroutine PRICEL returns following result:
+ 
+  LATTYP: Found a hexagonal cell.
+ ALAT       =     3.0698667575
+ C/A-ratio  =     1.6269021554
+  
+  Lattice vectors:
+  
+ A1 = (   3.0698668036,   0.0000000000,   0.0000000000)
+ A2 = (  -1.5349333558,   2.6585825584,   0.0000000000)
+ A3 = (   0.0000000000,   0.0000000000,   4.9943728447)
+ 
+   8 primitive cells build up your supercell.
+ 
+
+ Routine SETGRP: Setting up the symmetry group for a 
+ hexagonal supercell.
+
+
+ Subroutine GETGRP returns: Found  8 space group operations
+ (whereof  2 operations were pure point group operations)
+ out of a pool of 24 trial point group operations.
+
+
+The dynamic configuration has the point symmetry C_1h.
+ The point group associated with its full space group is C_4v.
