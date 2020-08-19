@@ -5,8 +5,8 @@
   <i name="version" type="string">5.4.4.18Apr17-6-g9f103f2a35  </i>
   <i name="subversion" type="string">(build Jun 24 2018 22:36:06) complex            parallel </i>
   <i name="platform" type="string">LinuxIFC </i>
-  <i name="date" type="string">2020 08 18 </i>
-  <i name="time" type="string">23:32:36 </i>
+  <i name="date" type="string">2020 08 19 </i>
+  <i name="time" type="string">11:54:05 </i>
  </generator>
  <incar>
   <i type="string" name="SYSTEM"> /net/hulk/PMD/skwon/GaN/Wurtzite/vasp/U</i>
