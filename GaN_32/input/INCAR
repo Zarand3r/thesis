@@ -23,7 +23,7 @@ EDIFF = 1E-7
 EDIFFG = 1E-3
 ISPIN = 1
 
-LREAL = False
+LREAL = auto 
 LORBIT = 11
 ISMEAR = 0
 SIGMA = 0.03
@@ -40,3 +40,4 @@ LPLANE = .TRUE.
 NCORE = 4
 LSCALU = .FALSE.
 NSIM = 4
+Symprec = 10e-5 
