@@ -1,6 +1,6 @@
 #PBS -N  vGaN_32
 #PBS -S /bin/tcsh
-#PBS -l nodes=1:ppn=8,walltime=24:00:00
+#PBS -l nodes=1:ppn=16,walltime=48:00:00
 #PBS -V
  
 source /net/hulk/PMD/yufeng/vasp.5.4.4._openmpi_intel64_mkl_noSCALAPACK/bin/vasp_env.csh
