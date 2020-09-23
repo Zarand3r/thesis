@@ -1,0 +1,10 @@
+PROCAR filter=lfs diff=lfs merge=lfs -text
+vasprun filter=lfs diff=lfs merge=lfs -text
+vasprun.xml filter=lfs diff=lfs merge=lfs -text
+Dope_GaN_32/vasprun.xml filter=lfs diff=lfs merge=lfs -text
+GaN_32/vasprun.xml filter=lfs diff=lfs merge=lfs -text
+GaN_32/PROCAR filter=lfs diff=lfs merge=lfs -text
+Dope_GaN_32/minimization/vasprun.xml filter=lfs diff=lfs merge=lfs -text
+Dope_GaN_32/bandgap/PROCAR filter=lfs diff=lfs merge=lfs -text
+Dope_GaN_32/minimization/OUTCAR filter=lfs diff=lfs merge=lfs -text
+Dope_GaN_32/PROCAR filter=lfs diff=lfs merge=lfs -text
