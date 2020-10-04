@@ -1,0 +1,6 @@
+final force
+iterations
+convergence on energy
+free energy?
+kpoints sampling
+band structure
