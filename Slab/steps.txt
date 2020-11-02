@@ -1,0 +1,3 @@
+scp -r Slab rbao@ion.wag.caltech.edu:/ul/rbao/Slab
+cd Slab
+vaspsub Doped/Structure/minimization -n 16 -t 48 
