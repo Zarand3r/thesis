@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --job-name=/central/groups/wag/rbao/thesis/Slab/Doped/Structure/minimization
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=rbao@caltech.edu     # Where to send mail      
+#SBATCH --nodes=1
+#SBATCH  --ntasks-per-node=32
+#SBATCH --time=16:00:00               # Time limit hrs:min:sec
+#SBATCH --output=Logfile   # Standard output and error log
+pwd; hostname; date
+module load intel/18.1 mkl/18.1
+
+pwd
+cwd=$(pwd)
+echo $SLURM_JOBID "${cwd}" >> ~/job_history
+
+srun /central/groups/wag/programs/vasp.5.4.4_vtstsol/bin/vasp_std > ./log
+
+date

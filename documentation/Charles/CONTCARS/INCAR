@@ -1,0 +1,39 @@
+SYSTEM = job_name
+ENCUT = 500
+GGA = PE
+LWAVE = False
+LCHARG = False
+LVTOT = False
+NELM = 200
+PREC = Accurate
+ALGO = Fast
+DIPOL =  0.5 0.5 0.5
+IDIPOL = 3
+IVDW = 12
+
+LSOL = True
+
+ISIF = 2 
+IBRION = 2
+NSW = 300
+EDIFF = 1E-6
+EDIFFG = -1E-2
+ISPIN = 1
+
+LREAL = False
+LORBIT = 11
+ISMEAR = 0
+SIGMA = 0.03
+
+LDAU      = .TRUE.
+LDAUTYPE  = 2  # 2: The simplified (rotationally invariant) approach to the LSDA+U, only the difference (U-J) is meaningful.
+LDAUL     = -1 2 -1  # The l-quantum number for which the on-site interaction is added. (-1 : no on-site interaction is added.)
+LDAUU = 0.00 6.7 0.00
+LDAUJ     = 0.00 0.00 0.00  # the strength of the effective on-site exchange interactions in eV
+LDAUPRINT = 2  # write occupancy matrix + potential matrix
+LMAXMIX   = 4  # L(S)DA+U calculations require in many cases an increase of LMAXMIX to 4 for d-electrons (or 6 for f-elements) in order to obtain fast convergence to the groundstate.
+
+LPLANE = .TRUE.
+NCORE = 4
+LSCALU = .FALSE.
+NSIM = 4

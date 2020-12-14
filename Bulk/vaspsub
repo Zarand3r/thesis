@@ -1,0 +1,125 @@
+#!/bin/bash
+# vasp submission script on atom, ion, and fermion by Yufeng Huang
+
+if [[ $# -eq 0 ]]
+then
+   echo "Instruction: "
+   echo "   vaspsub JOBNAME OPTIONS"
+   echo "   JOBNAME is the directory of the VASP calculation"
+   echo "   list of Options: "
+   echo "      -n processors: number of processors for the job, default is 8"
+   echo "      -t walltime: walltime for the run, default is 24 hrs"
+   echo "      -gam: gamma point calculation"
+   echo "      -pbs: create pbs only, will not submit via qsub"
+   echo "      -jn jobname: jobname displayed in qstat, default is the same as the directory name" 
+   echo "      -subdir subDir: run the vasp job in the subdirectory subDir"
+   exit
+fi
+
+export fileName=$1; shift
+export jobName="v"$fileName
+export nProc=8;
+export wallTime=24;
+export runtype="normal"
+export gam=0
+
+while [[ $# -gt 0 ]]
+do
+   case "$1" in
+      "-n") shift; export nProc=$1; shift ;;
+      "-t") shift; export wallTime=$1; shift ;;
+      "-gam") shift; export gam=1;;
+      "-pbs") shift; export pbs=1 ;;
+      "-jn") shift; export jobName=$1; shift ;;
+      "-runtype") shift; export runtype=$1; shift ;;
+      "-subdir") shift; export subDir=$1; shift ;;
+      *) echo option $1 not found, ignoring $1; shift ;;
+   esac
+done
+
+if [[ $subDir ]]
+then
+   cd $fileName
+   if [[ -z $jN ]]
+   then
+      export jobName="v"$fileName"_"$subDir
+   fi
+   export fileName=$subDir
+fi
+
+case "$runtype" in 
+   "normal")
+      cd $fileName
+      ;;
+   "freq")
+      mkdir -p $fileName"_freq"
+      cp $fileName/INCAR.freq $fileName"_freq"/INCAR
+      cp $fileName/POSCAR.freq $fileName"_freq"/POSCAR
+      cp $fileName/POTCAR $fileName"_freq"/POTCAR
+      cp $fileName/KPOINTS $fileName"_freq"/KPOINTS
+      cd $fileName"_freq"
+      ;;
+   "dos")
+      mkdir -p $fileName"_dos"
+      cp $fileName/INCAR.dos $fileName"_dos"/INCAR
+      cp $fileName/CONTCAR $fileName"_dos"/POSCAR
+      cp $fileName/POTCAR $fileName"_dos"/POTCAR
+      cp $fileName/KPOINTS.dos $fileName"_dos"/KPOINTS
+      cd $fileName"_dos"
+      ;;
+   *)
+      echo "runtype $runtype not recognized, no calculation is performed"
+      exit
+      ;;
+esac
+
+echo "#PBS -N " $jobName > pbs
+echo "#PBS -S /bin/tcsh" >> pbs
+echo "#PBS -l nodes=1:ppn=$nProc,walltime=$wallTime:00:00" >> pbs
+echo "#PBS -V" >> pbs
+
+host=`echo $HOSTNAME | sed "s/.wag.caltech.edu//g"`
+if [[ $host == "fermion" ]]; then echo "#PBS -q cpu" >> pbs; fi
+
+echo " " >> pbs
+
+echo "source /net/hulk/PMD/yufeng/vasp.5.4.4._openmpi_intel64_mkl_noSCALAPACK/bin/vasp_env.csh" >> pbs
+
+echo " " >> pbs
+
+if [[ $gam -eq 1 ]]
+then
+    echo 'set VASP="/net/hulk/PMD/yufeng/vasp.5.4.4._openmpi_intel64_mkl_noSCALAPACK/bin/vasp_gam"' >> pbs
+else
+    echo 'set VASP="/net/hulk/PMD/yufeng/vasp.5.4.4._openmpi_intel64_mkl_noSCALAPACK/bin/vasp_std"' >> pbs    
+fi
+
+echo 'set MPI=mpirun' >> pbs
+echo 'set nprocs=`wc -l < $PBS_NODEFILE`' >> pbs
+echo " " >> pbs
+echo 'cd $PBS_O_WORKDIR' >> pbs
+echo " " >> pbs
+echo '$MPI -np $nprocs -machinefile $PBS_NODEFILE $VASP > LOG' >> pbs
+
+case "$runtype" in
+   "normal") ;;
+   "freq") 
+      echo "cp OUTCAR ../$fileName/OUTCAR.freq" >> pbs
+      echo "cp LOG ../$fileName/LOG.freq" >> pbs
+      echo "cd .." >> pbs
+      echo "rm -r "$fileName"_freq" >> pbs
+      ;;
+   "dos")
+      echo "cp DOSCAR ../$fileName/DOSCAR.dos" >> pbs
+      echo "cp PROCAR ../$fileName/PROCAR.dos" >> pbs
+      echo "cp vasprun.xml ../$fileName/vasprun.xml.dos" >> pbs
+      echo "cp LOG ../$fileName/LOG.dos" >> pbs
+      echo "cd .." >> pbs
+      echo "rm -r "$fileName"_dos" >> pbs
+      ;;
+   *) ;;
+esac
+
+echo "echo Job exited. >> LOG" >> pbs
+
+if [[ -z $pbs ]]; then qsub pbs; fi
